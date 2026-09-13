@@ -65,7 +65,6 @@ public partial class SNMerchantCharacter : NMerchantCharacter
     public override void _ExitTree()
     {
         HeadVisibilityBus.OnVisibilityChanged -= OnVisibilityChanged;
-        _spineMega?.Dispose();
         base._ExitTree();
     }
 }
