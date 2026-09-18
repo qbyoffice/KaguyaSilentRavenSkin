@@ -2,122 +2,101 @@ using Godot;
 using MegaCrit.Sts2.Core.Bindings.MegaSpine;
 using MegaCrit.Sts2.Core.Nodes.Combat;
 using MegaCrit.Sts2.Core.Animation;
-using System.Runtime.CompilerServices;
-using MegaCrit.Sts2.Core.Models;
+using MegaCrit.Sts2.Core.Entities.Creatures;
+using System.Reflection;
 
 namespace SilentSkinMod.Core.Nodes.Combat;
-
-internal static class NCreatureAccessors
-{
-    [UnsafeAccessor(UnsafeAccessorKind.Field, Name = "_body")]
-    public extern static ref Node2D GetBodyField(NCreatureVisuals instance);
-
-    [UnsafeAccessor(UnsafeAccessorKind.Field, Name = "_spineAnimator")]
-    public extern static ref CreatureAnimator GetSpineAnimatorField(NCreature instance);
-
-    [UnsafeAccessor(UnsafeAccessorKind.Method, Name = "ConnectSpineAnimatorSignals")]
-    public extern static void ConnectSpineAnimatorSignals(NCreature instance);
-}
 
 [GlobalClass]
 public partial class SNCreatureVisuals : NCreatureVisuals
 {
-    private Node2D _nekoVisuals;
-    private MegaSkeletonDataResource _originalSkeletonData;
-    private MegaSkeletonDataResource _nekoSkeletonData;
-    private bool _isNekoActive = false;
+	private MegaSkeletonDataResource _liveData;
+	private MegaSkeletonDataResource _nekoData;
+	private MegaSkeletonDataResource _nsfwData;
+	private MegaSkeletonDataResource _nsfwCatData;
 
-    public override void _Ready()
-    {
-        base._Ready();
+	public override void _Ready()
+	{
+		base._Ready();
 
-        if (SpineBody != null)
-        {
-            var skeleton = SpineBody.GetSkeleton();
-            if (skeleton != null)
-                _originalSkeletonData = skeleton.GetData();
-        }
+		if (SpineBody != null)
+			_liveData = SpineBody.GetSkeleton()?.GetData();
 
-        _nekoVisuals = GetNodeOrNull<Node2D>("%Visuals_neko");
-        if (_nekoVisuals == null)
-        {
-            GD.PrintErr("未找到 %Visuals_neko");
-            return;
-        }
-        _nekoVisuals.Visible = false;
+		_nekoData    = ExtractSkeletonData("%Visuals_neko");
+		_nsfwData    = ExtractSkeletonData("%Visuals_nsfw");
+		_nsfwCatData = ExtractSkeletonData("%Visuals_nsfw_cat");
 
-        if (_nekoVisuals.GetClass() == "SpineSprite")
-        {
-            var nekoSpine = new MegaSprite(Variant.From(_nekoVisuals));
-            var skeleton = nekoSpine.GetSkeleton();
-            if (skeleton != null)
-                _nekoSkeletonData = skeleton.GetData();
-        }
+		HeadVisibilityBus.OnModeChanged += OnModeChanged;
+		ApplyMode(HeadVisibilityBus.CurrentMode);
+	}
 
-        HeadVisibilityBus.OnModeChanged += OnModeChanged;
-        ApplyMode(HeadVisibilityBus.CurrentMode);
-    }
+	private MegaSkeletonDataResource ExtractSkeletonData(string path)
+	{
+		var node = GetNodeOrNull<Node2D>(path);
+		if (node == null || node.GetClass() != "SpineSprite") return null;
+		node.Visible = false;
+		return new MegaSprite(Variant.From(node)).GetSkeleton()?.GetData();
+	}
 
-    private void OnModeChanged(CharacterMode mode) => ApplyMode(mode);
+	private void OnModeChanged(CharacterMode mode) => ApplyMode(mode);
 
-    private void ApplyMode(CharacterMode mode)
-    {
-        if (_nekoVisuals == null || SpineBody == null) return;
+	private void ApplyMode(CharacterMode mode)
+	{
+		if (SpineBody == null) return;
 
-        bool useNeko = mode == CharacterMode.LiveCat || mode == CharacterMode.NsfwCat;
+		MegaSkeletonDataResource target = mode switch
+		{
+			CharacterMode.Live     => _liveData,
+			CharacterMode.LiveCat  => _nekoData,
+			CharacterMode.Nsfw     => _nsfwData,
+			CharacterMode.NsfwCat  => _nsfwCatData,
+			_ => _liveData
+		};
 
-        if (useNeko && !_isNekoActive)
-        {
-            if (_nekoSkeletonData != null)
-            {
-                SpineBody.SetSkeletonDataRes(_nekoSkeletonData);
-                SpineBody.GetSkeleton()?.SetSlotsToSetupPose();
-            }
-            _nekoVisuals.Visible = false;
-            _isNekoActive = true;
-            RefreshAnimator();
-        }
-        else if (!useNeko && _isNekoActive)
-        {
-            if (_originalSkeletonData != null)
-            {
-                SpineBody.SetSkeletonDataRes(_originalSkeletonData);
-                SpineBody.GetSkeleton()?.SetSlotsToSetupPose();
-            }
-            _isNekoActive = false;
-            RefreshAnimator();
-        }
-    }
+		if (target == null)
+		{
+			GD.PrintErr($"[KaguyaSilentRavenSkin][SNCreatureVisuals] 模式 {mode} 的骨架数据不存在");
+			return;
+		}
 
-    private void RefreshAnimator()
-    {
-        var parent = GetParent() as NCreature;
-        if (parent == null) return;
-        
-        var creature = parent.Entity;
-        if (creature == null) return;
+		SpineBody.SetSkeletonDataRes(target);
+		SpineBody.GetSkeleton()?.SetSlotsToSetupPose();
 
-        object model = null;
-        if (creature.Player != null) model = creature.Player.Character;
-        else if (creature.Monster != null) model = creature.Monster;
-        if (model == null) return;
-        
-        CreatureAnimator newAnimator = null;
-        if (model is CharacterModel character)
-            newAnimator = character.GenerateAnimator(SpineBody, creature);
+		RefreshAnimator();
+		GD.Print($"[KaguyaSilentRavenSkin][SNCreatureVisuals] 切换到 {mode}");
+	}
 
-        if (newAnimator == null) return;
-        
-        NCreatureAccessors.GetSpineAnimatorField(parent) = newAnimator;
-        
-        NCreatureAccessors.ConnectSpineAnimatorSignals(parent);
-        
-        parent.SetAnimationTrigger("Idle");
-    }
+	private void RefreshAnimator()
+	{
+		var parent = GetParent();
+		if (parent == null) return;
 
-    public override void _ExitTree()
-    {
-        HeadVisibilityBus.OnModeChanged -= OnModeChanged;
-        base._ExitTree();
-    }
+		var entityProp = parent.GetType().GetProperty("Entity");
+		if (entityProp == null) return;
+		var creature = entityProp.GetValue(parent) as Creature;
+		if (creature == null) return;
+
+		object model = null;
+		if (creature.Player != null) model = creature.Player.Character;
+		else if (creature.Monster != null) model = creature.Monster;
+		if (model == null) return;
+
+		var genMethod = model.GetType().GetMethod("GenerateAnimator", new[] { typeof(MegaSprite), typeof(Creature) });
+		if (genMethod == null) return;
+		var newAnimator = genMethod.Invoke(model, new object[] { SpineBody, creature }) as CreatureAnimator;
+		if (newAnimator == null) return;
+
+		var animField = parent.GetType().GetField("_spineAnimator", BindingFlags.NonPublic | BindingFlags.Instance);
+		if (animField == null) return;
+		animField.SetValue(parent, newAnimator);
+
+		parent.GetType().GetMethod("ConnectSpineAnimatorSignals", BindingFlags.NonPublic | BindingFlags.Instance)?.Invoke(parent, null);
+		parent.GetType().GetMethod("SetAnimationTrigger")?.Invoke(parent, new object[] { "Idle" });
+	}
+
+	public override void _ExitTree()
+	{
+		HeadVisibilityBus.OnModeChanged -= OnModeChanged;
+		base._ExitTree();
+	}
 }
