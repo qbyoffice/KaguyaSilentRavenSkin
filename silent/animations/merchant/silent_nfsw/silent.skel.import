@@ -1,0 +1,14 @@
+[remap]
+
+importer="spine.skel"
+type="SpineSkeletonFileResource"
+uid="uid://buf446hqb57d8"
+path="res://.godot/imported/silent.skel-0da792db8c7745242da8e66cf70ddf26.spskel"
+
+[deps]
+
+source_file="res://silent/animations/merchant/silent_nfsw/silent.skel"
+dest_files=["res://.godot/imported/silent.skel-0da792db8c7745242da8e66cf70ddf26.spskel"]
+
+[params]
+

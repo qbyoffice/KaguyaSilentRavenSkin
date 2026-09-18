@@ -144,7 +144,6 @@ offset_top = 245.0
 offset_right = 1732.0
 offset_bottom = 429.0
 script = ExtResource("11_xp3hp")
-LongPressThreshold = 0.2
 
 [node name="Head_Click" type="Control" parent="."]
 anchors_preset = 0

@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://rcawyxv78mkx"
+path="res://.godot/imported/silent_neko.atlas-3d9b14dcd514e97402077b289b5a4151.spatlas"
+
+[deps]
+
+source_file="res://silent/animations/merchant/silent_nsfw_neko/silent_neko.atlas"
+dest_files=["res://.godot/imported/silent_neko.atlas-3d9b14dcd514e97402077b289b5a4151.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

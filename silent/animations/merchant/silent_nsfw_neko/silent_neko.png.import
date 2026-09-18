@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://samyqspcjcvf"
-path="res://.godot/imported/silent_neko.png-486a26a18b3ba0b332e48d0a74d9236e.ctex"
+uid="uid://6tk7q7tg8v8s"
+path="res://.godot/imported/silent_neko.png-50d0e7422987d207aeabca454644da27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://silent/animations/merchant/silent_neko/silent_neko.png"
-dest_files=["res://.godot/imported/silent_neko.png-486a26a18b3ba0b332e48d0a74d9236e.ctex"]
+source_file="res://silent/animations/merchant/silent_nsfw_neko/silent_neko.png"
+dest_files=["res://.godot/imported/silent_neko.png-50d0e7422987d207aeabca454644da27.ctex"]
 
 [params]
 

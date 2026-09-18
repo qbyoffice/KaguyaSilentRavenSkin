@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://yirtxm2nffuj"]
 
-[ext_resource type="Script" path="res://src/Core/Nodes/Screens/Shops/SNMerchantCharacter.cs" id="1_dd6bm"]
+[ext_resource type="Script" uid="uid://ddytifm8jllqv" path="res://src/Core/Nodes/Screens/Shops/SNMerchantCharacter.cs" id="1_dd6bm"]
 [ext_resource type="SpineSkeletonDataResource" uid="uid://cxo52bhiwgu1y" path="res://silent/animations/characters/silent_skel_data.tres" id="2_dd6bm"]
 [ext_resource type="SpineSkeletonDataResource" uid="uid://d35rhsenu0mg2" path="res://silent/animations/characters/silent_neko_skel_data.tres" id="3_rcetj"]
 

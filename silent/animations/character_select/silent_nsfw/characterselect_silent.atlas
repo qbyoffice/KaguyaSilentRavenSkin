@@ -1,0 +1,398 @@
+characterselect_silent.png
+	size: 8096, 1662
+	filter: Linear, Linear
+HS 0
+	bounds: 2314, 1607, 38, 54
+	offsets: 0, 0, 38, 56
+HS 1
+	bounds: 2127, 1630, 16, 31
+	offsets: 0, 0, 18, 31
+HS 2
+	bounds: 1900, 1631, 21, 30
+	offsets: 1, 0, 22, 30
+HS 3
+	bounds: 1258, 1636, 42, 25
+HS 4
+	bounds: 1301, 1637, 30, 24
+HS 5
+	bounds: 1879, 1633, 21, 28
+	offsets: 0, 2, 21, 30
+HS 6
+	bounds: 881, 1619, 50, 42
+	offsets: 0, 0, 51, 42
+HS 7
+	bounds: 4052, 1451, 96, 87
+HS 8
+	bounds: 7596, 802, 107, 129
+	offsets: 0, 1, 108, 152
+HS 9
+	bounds: 2238, 1620, 42, 41
+	offsets: 0, 1, 42, 42
+L B yanpi 0
+	bounds: 1847, 1631, 34, 30
+L T jiemao 0
+	bounds: 1789, 1633, 12, 28
+	offsets: 1, 0, 13, 28
+L T yanpi 0
+	bounds: 83, 1650, 9, 11
+	offsets: 0, 0, 9, 12
+L T yanpi 1
+	bounds: 1332, 1643, 18, 18
+L dao 0
+	bounds: 1138, 1575, 86, 462
+	offsets: 0, 0, 87, 462
+	rotate: 270
+L dao 1
+	bounds: 6409, 1382, 42, 118
+L datui hudiejie
+	bounds: 2923, 1611, 34, 50
+L leg 0
+	bounds: 6975, 1229, 596, 432
+	offsets: 1, 0, 604, 444
+L leg 1
+	bounds: 749, 1267, 714, 332
+L leg feidao
+	bounds: 4507, 1569, 39, 92
+L leg pidai
+	bounds: 2678, 207, 273, 206
+L leg yaoping
+	bounds: 5594, 1449, 71, 94
+L leg yinying
+	bounds: 443, 302, 247, 196
+	offsets: 1, 1, 250, 197
+L shou 0
+	bounds: 2270, 465, 156, 229
+	offsets: 0, 0, 156, 230
+L shou 1
+	bounds: 1, 569, 158, 269
+	offsets: 0, 1, 158, 270
+L tongkong 0
+	bounds: 587, 1644, 21, 17
+	offsets: 0, 1, 21, 18
+L xiuzi 0
+	bounds: 712, 1220, 90, 166
+L xiuzi 1
+	bounds: 3052, 1275, 134, 229
+L xiuzi 2
+	bounds: 1726, 1323, 64, 138
+L xiuzi 3
+	bounds: 6959, 1164, 119, 106
+L xiuzi 4
+	bounds: 8021, 1210, 54, 142
+	offsets: 11, 0, 65, 142
+L xiuzi 5
+	bounds: 5998, 682, 139, 266
+L xiuzi feidao 0
+	bounds: 7986, 656, 109, 189
+	offsets: 0, 0, 110, 189
+L yanbai
+	bounds: 1027, 1640, 22, 21
+L yanjiao
+	bounds: 60, 1643, 15, 18
+R B yanpi
+	bounds: 7730, 1585, 46, 76
+R T jiemao 0
+	bounds: 1802, 1638, 16, 23
+R T jiemao 1
+	bounds: 5756, 1596, 46, 65
+R T jiemao 2
+	bounds: 1624, 1640, 10, 21
+R T yanpi 0
+	bounds: 2352, 1624, 22, 37
+R T yanpi 1
+	bounds: 1164, 1530, 62, 82
+R dao 0
+	bounds: 5373, 1491, 485, 170
+R dao 1
+	bounds: 5841, 1577, 310, 84
+R dao guang 0
+	bounds: 5587, 701, 251, 143
+R lag 0
+	bounds: 3395, 206, 1381, 866
+	offsets: 0, 0, 1381, 902
+R lag 1
+	bounds: 418, 1045, 293, 451
+R shou 0
+	bounds: 2155, 1489, 222, 141
+R shou 1
+	bounds: 3122, 1584, 101, 77
+	offsets: 0, 5, 101, 82
+R shou 2
+	bounds: 500, 1616, 93, 45
+R shou 3
+	bounds: 657, 1407, 92, 128
+R tongkong 0
+	bounds: 1728, 1624, 34, 37
+R xiuzi 0
+	bounds: 80, 182, 402, 398
+R xiuzi 1
+	bounds: 3052, 1304, 1000, 357
+R xiuzi feidao
+	bounds: 6962, 1486, 281, 175
+	offsets: 0, 1, 281, 176
+R yanbai
+	bounds: 2885, 1611, 37, 50
+R yanjiao
+	bounds: 1820, 1637, 12, 24
+T hudiejie 0
+	bounds: 931, 1624, 52, 37
+	offsets: 1, 0, 54, 37
+T hudiejie 1
+	bounds: 2681, 1494, 70, 59
+T hudiejie 2
+	bounds: 1763, 1632, 28, 29
+T hudiejie 3
+	bounds: 3617, 1603, 42, 58
+T hudiejie 4
+	bounds: 1, 1506, 64, 80
+Top feidao
+	bounds: 6133, 1, 1962, 627
+	rotate: 180
+anquanku0_dei
+	bounds: 7235, 649, 258, 282
+anquanku1_dei
+	bounds: 7745, 222, 274, 283
+anquanku2_dei
+	bounds: 4381, 707, 307, 243
+beijing 0
+	bounds: 849, 323, 1120, 606
+beijing 1
+	bounds: 7570, 1563, 159, 98
+bengdai 0
+	bounds: 1531, 559, 167, 294
+bengdai 2
+	bounds: 5649, 1589, 106, 72
+bianzi 0
+	bounds: 4163, 561, 319, 125
+	offsets: 0, 0, 319, 126
+bianzi 1
+	bounds: 5554, 171, 842, 548
+body 0
+	bounds: 2895, 225, 570, 618
+bozi
+	bounds: 218, 1381, 67, 91
+	offsets: 5, 2, 78, 95
+cao 0
+	bounds: 3342, 823, 72, 207
+	offsets: 0, 0, 74, 207
+cao 1
+	bounds: 3943, 1409, 114, 142
+cao 2
+	bounds: 986, 1470, 201, 152
+cao 3
+	bounds: 1336, 1347, 116, 142
+	offsets: 0, 1, 116, 143
+diban 0
+	bounds: 6312, 931, 1501, 730
+	offsets: 1, 0, 1502, 730
+	rotate: 180
+dingdaer guang
+	bounds: 1279, 353, 522, 478
+	offsets: 4, 20, 526, 498
+doumao 0
+	bounds: 7511, 1400, 158, 162
+doumao 1
+	bounds: 7814, 1565, 87, 96
+doumao 2
+	bounds: 2597, 1442, 107, 118
+doumao 3
+	bounds: 4724, 662, 347, 187
+doumao 4
+	bounds: 3052, 1587, 102, 74
+doumao 5
+	bounds: 593, 1607, 66, 54
+doumao 6
+	bounds: 494, 216, 354, 166
+doumao 8
+	bounds: 6393, 554, 296, 377
+doumao7
+	bounds: 3102, 1053, 85, 146
+	offsets: 0, 0, 99, 146
+doumao9
+	bounds: 5374, 1472, 232, 99
+doupeng 0
+	bounds: 4714, 812, 140, 129
+doupeng 1
+	bounds: 3724, 793, 122, 150
+doupeng 2
+	bounds: 2276, 1625, 33, 36
+doupeng 3
+	bounds: 5731, 348, 429, 601
+doupeng 4
+	bounds: 1752, 1459, 61, 140
+	offsets: 0, 0, 62, 140
+doupeng 5
+	bounds: 2484, 1540, 300, 121
+	offsets: 0, 1, 300, 122
+doupeng 6
+	bounds: 6976, 1457, 94, 125
+doupeng 7
+	bounds: 1, 1427, 1199, 234
+doupeng 8
+	bounds: 5374, 795, 1234, 866
+	rotate: 180
+doupeng feidao 0
+	bounds: 1081, 449, 266, 185
+doupeng sheng 0
+	bounds: 7473, 775, 147, 156
+	offsets: 3, 0, 150, 156
+erduo 0
+	bounds: 4237, 1590, 53, 71
+	offsets: 0, 7, 53, 78
+fengge 0
+	bounds: 6674, 731, 132, 200
+gutoushipin 0
+	bounds: 976, 1629, 51, 32
+	offsets: 0, 0, 51, 34
+gutoushipin 1
+	bounds: 1682, 1624, 46, 37
+gutoushipin 2
+	bounds: 734, 1610, 69, 51
+	offsets: 0, 0, 70, 52
+jigu 0
+	bounds: 1286, 162, 102, 370
+	offsets: 0, 0, 102, 376
+jigu 1
+	bounds: 695, 1608, 61, 53
+jigu 2
+	bounds: 1984, 333, 221, 229
+jigu yinying 0
+	bounds: 1594, 1589, 72, 308
+	rotate: 90
+lian 0
+	bounds: 2757, 1557, 134, 104
+lian 1
+	bounds: 1, 1316, 217, 207
+	offsets: 0, 5, 218, 215
+meimao 0
+	bounds: 4290, 1607, 41, 54
+meimao 1
+	bounds: 1348, 1643, 18, 18
+mianju 0
+	bounds: 891, 1422, 99, 154
+mianju yanjing 0
+	bounds: 419, 1644, 17, 94
+	rotate: 90
+mianju yanjing 1
+	bounds: 163, 1632, 29, 146
+	offsets: 9, 0, 38, 146
+	rotate: 90
+mianju yinying 0
+	bounds: 6642, 1149, 342, 190
+	offsets: 10, 11, 358, 201
+miwu 0
+	bounds: 3187, 1055, 646, 289
+miwu 1
+	bounds: 5127, 607, 455, 192
+	offsets: 1024, 341, 2610, 1004
+miwu 2
+	bounds: 2615, 413, 319, 336
+	offsets: 0, 0, 322, 355
+miwu 3
+	bounds: 6573, 257, 1522, 856
+	rotate: 180
+miwu 4
+	bounds: 6138, 191, 438, 778
+	offsets: 0, 7, 493, 874
+naizi 0
+	bounds: 7814, 1335, 269, 326
+	offsets: 16, 0, 285, 329
+naizi 1
+	bounds: 1447, 1268, 106, 104
+	offsets: 0, 0, 107, 104
+neiyi 0
+	bounds: 3399, 310, 298, 298
+neiyi 1
+	bounds: 2340, 1331, 278, 330
+neiyi 2
+	bounds: 787, 1627, 97, 34
+neiyi 3
+	bounds: 7358, 1573, 46, 88
+neiyi 4
+	bounds: 1421, 1308, 346, 290
+pigu 0
+	bounds: 1970, 652, 307, 254
+renwu guangyun
+	bounds: 6690, 568, 578, 363
+scope
+	bounds: 74, 1653, 8, 8
+shalou 0
+	bounds: 3823, 1595, 53, 66
+shalou guang 0
+	bounds: 877, 752, 172, 178
+shalou guang 1
+	bounds: 7243, 1547, 114, 114
+shalou guang 2
+	bounds: 7814, 1136, 215, 199
+shipin touying 0
+	bounds: 1201, 1636, 57, 25
+shipin touying 1
+	bounds: 23, 1648, 42, 13
+shipin touying 2
+	bounds: 303, 1650, 115, 11
+shipinsheng 0
+	bounds: 1, 1634, 164, 27
+shipinsheng 1
+	bounds: 5736, 1610, 29, 51
+shu 0
+	bounds: 682, 930, 1776, 731
+shu 1
+	bounds: 6450, 1242, 533, 419
+	offsets: 0, 3, 533, 422
+shugan 0
+	bounds: 1, 416, 848, 894
+shugan 1
+	bounds: 3640, 171, 587, 266
+shugan 2
+	bounds: 4463, 112, 997, 1501
+	rotate: 90
+shugan 3
+	bounds: 2063, 241, 1310, 766
+tou yinying
+	bounds: 4025, 1526, 215, 135
+	offsets: 14, 9, 244, 156
+toufa 0
+	bounds: 3669, 354, 246, 170
+toufa 1
+	bounds: 631, 1368, 101, 123
+toufa 2
+	bounds: 6229, 814, 154, 263
+	offsets: 0, 0, 154, 280
+toufa 3
+	bounds: 2894, 340, 250, 239
+toufa 4
+	bounds: 253, 1185, 196, 246
+toufa 5
+	bounds: 6406, 1145, 140, 142
+toufa 6
+	bounds: 5899, 788, 121, 158
+tougu mianju 0
+	bounds: 1746, 74, 300, 602
+	offsets: 3, 0, 303, 602
+tougu mianju 1
+	bounds: 8043, 1316, 52, 187
+tougu mianju 2
+	bounds: 3002, 1051, 189, 286
+touying 0
+	bounds: 2439, 657, 2129, 1004
+	offsets: 0, 0, 2144, 1036
+	rotate: 180
+wuqi1
+	bounds: 4555, 775, 818, 886
+wuqi2
+	bounds: 2459, 997, 592, 664
+yan guang 0
+	bounds: 1637, 1620, 45, 41
+	offsets: 3, 0, 54, 46
+yanguang 1
+	bounds: 2158, 1585, 79, 76
+yaoping 0
+	bounds: 645, 1603, 61, 58
+yifu_dei
+	bounds: 3670, 1598, 152, 63
+zhi shui 0
+	bounds: 5653, 1464, 79, 73
+	offsets: 0, 0, 80, 73
+zhi shui 1
+	bounds: 1050, 835, 138, 95
+	offsets: 0, 0, 138, 96
