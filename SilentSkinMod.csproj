@@ -31,10 +31,6 @@
       <PackageReference Include="Book.StS2.RefLib" Version="0.107.1" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Content Include="sc.info" />
-    </ItemGroup>
-
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
 		<Exec Command="xcopy /Y &quot;&quot;D:\sts2_project\SilentSkinMod\.godot\mono\temp\bin\ExportDebug\SilentSkinMod.dll&quot;&quot; &quot;D:\SteamLibrary\steamapps\common\Slay the Spire 2\mods\SilentSkinMod&quot;" />
     </Target>
