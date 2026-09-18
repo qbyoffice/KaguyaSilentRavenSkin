@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://yirtxm2nffuj"]
+[gd_scene load_steps=6 format=3 uid="uid://yirtxm2nffuj"]
 
-[ext_resource type="Script" path="res://src/Core/Nodes/Screens/Shops/SNMerchantCharacter.cs" id="1_dd6bm"]
+[ext_resource type="Script" uid="uid://ddytifm8jllqv" path="res://src/Core/Nodes/Screens/Shops/SNMerchantCharacter.cs" id="1_dd6bm"]
 [ext_resource type="SpineSkeletonDataResource" uid="uid://cxo52bhiwgu1y" path="res://silent/animations/characters/silent_skel_data.tres" id="2_dd6bm"]
 [ext_resource type="SpineSkeletonDataResource" uid="uid://d35rhsenu0mg2" path="res://silent/animations/characters/silent_neko_skel_data.tres" id="3_rcetj"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://bb7jgyoa3gttg" path="res://silent/animations/characters/silent_nsfw_skel_data.tres" id="4_drnpe"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://b7srd4b6ev2ca" path="res://silent/animations/characters/silent_neko_nsfw_skel_data.tres" id="4_rcetj"]
 
 [node name="SilentMerchant" type="Node2D"]
 script = ExtResource("1_dd6bm")
@@ -23,4 +25,22 @@ preview_frame = false
 preview_time = 0.0
 visible = false
 show_behind_parent = true
+scale = Vector2(0.55, 0.55)
+
+[node name="SpineSprite_nsfw" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("4_drnpe")
+preview_skin = "Default"
+preview_animation = "relaxed_loop"
+preview_frame = false
+preview_time = 0.0
+visible = false
+scale = Vector2(0.55, 0.55)
+
+[node name="SpineSprite_nsfw_cat" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("4_rcetj")
+preview_skin = "Default"
+preview_animation = "relaxed_loop"
+preview_frame = false
+preview_time = 0.0
+visible = false
 scale = Vector2(0.55, 0.55)

@@ -1,9 +1,6 @@
-[gd_scene load_steps=19 format=3 uid="uid://fcuocamiai2r"]
+[gd_scene load_steps=24 format=3 uid="uid://fcuocamiai2r"]
 
-[ext_resource type="Texture2D" uid="uid://ut2siocq2jbl" path="res://silent/animations/silent_button/silent_button_idle.png" id="2_catwu"]
-[ext_resource type="Texture2D" uid="uid://qwnc6flmy5wg" path="res://silent/animations/silent_button/silent_button_click.png" id="3_3lbej"]
 [ext_resource type="Shader" uid="uid://bwa5alqqsss7h" path="res://shaders/vfx/vfx_stepped_shader_fire_add.tres" id="3_d7gfu"]
-[ext_resource type="Texture2D" uid="uid://5r2tkclk30bk" path="res://silent/animations/silent_button/silent_button_select.png" id="4_vq3mu"]
 [ext_resource type="Texture2D" uid="uid://dvrqs4oc7u8c1" path="res://images/vfx/tileable_noise_1.png" id="4_xbqpc"]
 [ext_resource type="Texture2D" uid="uid://c3fjcj3s7ahsu" path="res://images/vfx/light.png" id="5_xp3hp"]
 [ext_resource type="Texture2D" uid="uid://c2gaimscc2lx1" path="res://images/vfx/tileable_noise_2.png" id="6_4op7v"]
@@ -13,6 +10,14 @@
 [ext_resource type="Texture2D" uid="uid://bbp7564qvqp6a" path="res://images/vfx/dot.png" id="9_3lbej"]
 [ext_resource type="Script" uid="uid://dsnksqk0f4tja" path="res://src/Core/HeadBoneClickToggle.cs" id="11_3lbej"]
 [ext_resource type="Script" uid="uid://b65uwe7w48kg8" path="res://src/Core/Nodes/Animation/KaguyaSilentHeadPressInteractor.cs" id="11_xp3hp"]
+[ext_resource type="Script" uid="uid://bo5ai6jesch3v" path="res://src/Core/KaguyaSelectUI/MenuRoot.gd" id="15_d3thw"]
+[ext_resource type="Texture2D" uid="uid://d038w2lax7elv" path="res://silent/animations/silent_button/frame/frame_off.png" id="15_vq3mu"]
+[ext_resource type="Texture2D" uid="uid://tmbfoinhnnjw" path="res://silent/animations/silent_button/off.png" id="16_d3thw"]
+[ext_resource type="Texture2D" uid="uid://cjbwid1inf40" path="res://silent/animations/silent_button/frame/frame.png" id="16_hqyr3"]
+[ext_resource type="Texture2D" uid="uid://cy50eqh0jaoda" path="res://silent/animations/silent_button/Hover.png" id="17_o2o77"]
+[ext_resource type="Texture2D" uid="uid://b0xlqj5xaa37h" path="res://silent/animations/silent_button/frame/frame_Hover.png" id="18_ajvnn"]
+[ext_resource type="Texture2D" uid="uid://doggr7xcm8gf" path="res://silent/animations/silent_button/click.png" id="18_kqwxe"]
+[ext_resource type="Texture2D" uid="uid://uuqpxeiw837x" path="res://silent/animations/silent_button/on.png" id="19_jqgyh"]
 [ext_resource type="Material" uid="uid://c4ycqv0gdxvmr" path="res://themes/canvas_item_material_additive_shared.tres" id="shared_additive_mat"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vq3mu"]
@@ -144,25 +149,40 @@ offset_top = 245.0
 offset_right = 1732.0
 offset_bottom = 429.0
 script = ExtResource("11_xp3hp")
-LongPressThreshold = 0.2
 
-[node name="Head_Click" type="Control" parent="."]
+[node name="MenuRoot" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 1818.0
-offset_top = 662.0
-offset_right = 1818.0
-offset_bottom = 662.0
-script = ExtResource("11_3lbej")
+offset_left = 150.0
+offset_top = 62.0
+offset_right = 190.0
+offset_bottom = 102.0
+script = ExtResource("15_d3thw")
+option_names = Array[String](["Live mode", "Live mode_cat", "NSFW", "NSFW_cat"])
+tex_normal_list = Array[Texture2D]([ExtResource("16_d3thw"), ExtResource("16_d3thw"), ExtResource("16_d3thw"), ExtResource("16_d3thw")])
+tex_hover_list = Array[Texture2D]([ExtResource("17_o2o77"), ExtResource("17_o2o77"), ExtResource("17_o2o77"), ExtResource("17_o2o77")])
+tex_pressed_list = Array[Texture2D]([ExtResource("18_kqwxe"), ExtResource("18_kqwxe"), ExtResource("18_kqwxe"), ExtResource("18_kqwxe")])
+tex_selected_list = Array[Texture2D]([ExtResource("19_jqgyh"), ExtResource("19_jqgyh"), ExtResource("19_jqgyh"), ExtResource("19_jqgyh")])
+option_width = 195.0
+option_height = 50.0
+option_gap = 0.0
 
-[node name="TextureButton" type="TextureButton" parent="Head_Click"]
+[node name="SettingsIcon" type="TextureButton" parent="MenuRoot"]
 layout_mode = 0
-offset_left = -40.0
-offset_top = -49.0
-offset_right = 50.0
-offset_bottom = 41.0
+offset_right = 40.0
+offset_bottom = 40.0
 toggle_mode = true
-action_mode = 0
-keep_pressed_outside = true
-texture_normal = ExtResource("2_catwu")
-texture_pressed = ExtResource("3_3lbej")
-texture_hover = ExtResource("4_vq3mu")
+texture_normal = ExtResource("15_vq3mu")
+texture_pressed = ExtResource("16_hqyr3")
+texture_hover = ExtResource("18_ajvnn")
+
+[node name="OptionsRoot" type="Control" parent="MenuRoot"]
+anchors_preset = 0
+offset_top = 44.0
+offset_right = 40.0
+offset_bottom = 84.0
+
+[node name="HeadBoneClickToggle" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_3lbej")
