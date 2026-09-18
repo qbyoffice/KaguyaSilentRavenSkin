@@ -23,7 +23,7 @@ HS 6
 HS 7
 	bounds: 4052, 1451, 96, 87
 HS 8
-	bounds: 1050, 801, 107, 129
+	bounds: 7596, 802, 107, 129
 	offsets: 0, 1, 108, 152
 HS 9
 	bounds: 2238, 1620, 42, 41
@@ -54,14 +54,14 @@ L leg 1
 L leg feidao
 	bounds: 4507, 1569, 39, 92
 L leg pidai
-	bounds: 438, 280, 273, 206
+	bounds: 2678, 207, 273, 206
 L leg yaoping
 	bounds: 5594, 1449, 71, 94
 L leg yinying
-	bounds: 2930, 385, 247, 196
+	bounds: 443, 302, 247, 196
 	offsets: 1, 1, 250, 197
 L shou 0
-	bounds: 7220, 702, 156, 229
+	bounds: 2270, 465, 156, 229
 	offsets: 0, 0, 156, 230
 L shou 1
 	bounds: 1, 569, 158, 269
@@ -76,7 +76,7 @@ L xiuzi 1
 L xiuzi 2
 	bounds: 1726, 1323, 64, 138
 L xiuzi 3
-	bounds: 3700, 1555, 119, 106
+	bounds: 6959, 1164, 119, 106
 L xiuzi 4
 	bounds: 8021, 1210, 54, 142
 	offsets: 11, 0, 65, 142
@@ -100,7 +100,7 @@ R T jiemao 2
 R T yanpi 0
 	bounds: 2955, 1624, 22, 37
 R T yanpi 1
-	bounds: 1164, 1530, 62, 82
+	bounds: 1800, 1523, 62, 82
 R dao 0
 	bounds: 5373, 1491, 485, 170
 R dao 1
@@ -122,7 +122,7 @@ R shou 2
 R shou 3
 	bounds: 657, 1407, 92, 128
 R tongkong 0
-	bounds: 3871, 1624, 34, 37
+	bounds: 4469, 1624, 34, 37
 R xiuzi 0
 	bounds: 80, 182, 402, 398
 R xiuzi 1
@@ -131,7 +131,7 @@ R xiuzi feidao
 	bounds: 6962, 1486, 281, 175
 	offsets: 0, 1, 281, 176
 R yanbai
-	bounds: 5758, 1611, 37, 50
+	bounds: 5762, 1611, 37, 50
 R yanjiao
 	bounds: 1799, 1637, 12, 24
 T hudiejie 0
@@ -142,12 +142,18 @@ T hudiejie 1
 T hudiejie 2
 	bounds: 1848, 1632, 28, 29
 T hudiejie 3
-	bounds: 5718, 1603, 42, 58
+	bounds: 5722, 1603, 42, 58
 T hudiejie 4
 	bounds: 1, 1506, 64, 80
 Top feidao
 	bounds: 6133, 1, 1962, 627
 	rotate: 180
+anquanku0_dei
+	bounds: 7235, 649, 258, 282
+anquanku1_dei
+	bounds: 7745, 222, 274, 283
+anquanku2_dei
+	bounds: 4381, 707, 307, 243
 beijing 0
 	bounds: 849, 323, 1120, 606
 beijing 1
@@ -155,7 +161,7 @@ beijing 1
 bengdai 0
 	bounds: 1531, 559, 167, 294
 bengdai 2
-	bounds: 3604, 1589, 106, 72
+	bounds: 5649, 1589, 106, 72
 bianzi 0
 	bounds: 4163, 561, 319, 125
 	offsets: 0, 0, 319, 126
@@ -190,13 +196,13 @@ doumao 1
 doumao 2
 	bounds: 2597, 1442, 107, 118
 doumao 3
-	bounds: 7331, 744, 347, 187
+	bounds: 4724, 662, 347, 187
 doumao 4
 	bounds: 3052, 1587, 102, 74
 doumao 5
-	bounds: 5668, 1607, 66, 54
+	bounds: 1186, 1557, 66, 54
 doumao 6
-	bounds: 7741, 202, 354, 166
+	bounds: 494, 216, 354, 166
 doumao 8
 	bounds: 6393, 554, 296, 377
 doumao7
@@ -205,9 +211,9 @@ doumao7
 doumao9
 	bounds: 5374, 1472, 232, 99
 doupeng 0
-	bounds: 3738, 777, 140, 129
+	bounds: 4714, 812, 140, 129
 doupeng 1
-	bounds: 3207, 732, 122, 150
+	bounds: 3724, 793, 122, 150
 doupeng 2
 	bounds: 3162, 1625, 33, 36
 doupeng 3
@@ -226,9 +232,9 @@ doupeng 8
 	bounds: 5374, 795, 1234, 866
 	rotate: 180
 doupeng feidao 0
-	bounds: 4723, 663, 266, 185
+	bounds: 1081, 449, 266, 185
 doupeng sheng 0
-	bounds: 4555, 617, 147, 156
+	bounds: 7473, 775, 147, 156
 	offsets: 3, 0, 150, 156
 erduo 0
 	bounds: 4237, 1590, 53, 71
@@ -241,15 +247,15 @@ gutoushipin 0
 gutoushipin 1
 	bounds: 4053, 1624, 46, 37
 gutoushipin 2
-	bounds: 8024, 1610, 69, 51
+	bounds: 3573, 1610, 69, 51
 	offsets: 0, 0, 70, 52
 jigu 0
-	bounds: 1196, 378, 102, 370
+	bounds: 1286, 162, 102, 370
 	offsets: 0, 0, 102, 376
 jigu 1
 	bounds: 2296, 1608, 61, 53
 jigu 2
-	bounds: 4979, 553, 221, 229
+	bounds: 1984, 333, 221, 229
 jigu yinying 0
 	bounds: 1594, 1589, 72, 308
 	rotate: 90
@@ -329,7 +335,7 @@ renwu guangyun
 scope
 	bounds: 74, 1653, 8, 8
 shalou 0
-	bounds: 3818, 1595, 53, 66
+	bounds: 3823, 1595, 53, 66
 shalou guang 0
 	bounds: 877, 752, 172, 178
 shalou guang 1
@@ -371,7 +377,7 @@ toufa 2
 	bounds: 6229, 814, 154, 263
 	offsets: 0, 0, 154, 280
 toufa 3
-	bounds: 4372, 747, 250, 239
+	bounds: 2894, 340, 250, 239
 toufa 4
 	bounds: 253, 1185, 196, 246
 toufa 5
@@ -400,9 +406,11 @@ yanguang 1
 	bounds: 2158, 1585, 79, 76
 yaoping 0
 	bounds: 1440, 1536, 61, 58
+yifu_dei
+	bounds: 3670, 1598, 152, 63
 zhi shui 0
 	bounds: 5653, 1464, 79, 73
 	offsets: 0, 0, 80, 73
 zhi shui 1
-	bounds: 6945, 1165, 138, 95
+	bounds: 1050, 835, 138, 95
 	offsets: 0, 0, 138, 96

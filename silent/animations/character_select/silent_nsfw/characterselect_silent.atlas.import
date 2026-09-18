@@ -1,0 +1,16 @@
+[remap]
+
+importer="spine.atlas"
+type="SpineAtlasResource"
+uid="uid://cqtnp8ev5k0wx"
+path="res://.godot/imported/characterselect_silent.atlas-5523928449e1ac8757980ce8a8dc36e6.spatlas"
+
+[deps]
+
+source_file="res://silent/animations/character_select/silent_nsfw/characterselect_silent.atlas"
+dest_files=["res://.godot/imported/characterselect_silent.atlas-5523928449e1ac8757980ce8a8dc36e6.spatlas"]
+
+[params]
+
+normal_map_prefix="n"
+specular_map_prefix="s"

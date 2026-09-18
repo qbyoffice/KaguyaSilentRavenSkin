@@ -1,20 +1,29 @@
-﻿
+﻿using System;
+
+public enum CharacterMode
+{
+    Live = 0,     
+    LiveCat = 1,  
+    Nsfw = 2,    
+    NsfwCat = 3  
+}
+
 public static class HeadVisibilityBus
 {
-    private static bool _isHidden = false; 
+    private static CharacterMode _currentMode = CharacterMode.Live;
 
-    public static event Action<bool> OnVisibilityChanged;
+    public static event Action<CharacterMode> OnModeChanged;
 
-    public static bool IsHidden => _isHidden;
+    public static CharacterMode CurrentMode => _currentMode;
 
-    public static void SetVisibility(bool hidden)
+    public static void SetMode(CharacterMode mode)
     {
-        if (_isHidden != hidden)
+        if (_currentMode != mode)
         {
-            _isHidden = hidden;
-            OnVisibilityChanged?.Invoke(_isHidden);
+            _currentMode = mode;
+            OnModeChanged?.Invoke(_currentMode);
         }
     }
-
-    public static void ToggleVisibility() => SetVisibility(!_isHidden);
+    
+    public static bool IsHidden => _currentMode != CharacterMode.Live;
 }

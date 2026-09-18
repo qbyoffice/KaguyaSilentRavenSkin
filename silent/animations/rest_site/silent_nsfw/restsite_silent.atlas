@@ -1,0 +1,76 @@
+restsite_silent.png
+	size: 1024, 1024
+	filter: Linear, Linear
+L xiuzi
+	bounds: 546, 907, 138, 116
+R maoer
+	bounds: 267, 938, 47, 51
+R shou
+	bounds: 275, 881, 142, 114
+	offsets: 1, 0, 144, 115
+	rotate: 90
+R xiuzi
+	bounds: 790, 743, 176, 280
+	offsets: 0, 0, 177, 280
+bianzi
+	bounds: 868, 839, 139, 184
+doumao0
+	bounds: 855, 477, 146, 162
+doumao1
+	bounds: 958, 739, 65, 110
+doumao2
+	bounds: 996, 924, 25, 99
+feidao
+	bounds: 498, 549, 185, 145
+	rotate: 180
+fengyi0
+	bounds: 56, 308, 172, 282
+	rotate: 90
+fengyi1
+	bounds: 178, 865, 103, 158
+fengyi2
+	bounds: 254, 421, 244, 333
+	rotate: 90
+head
+	bounds: 893, 586, 130, 166
+highlight
+	bounds: 595, 484, 297, 539
+jiao R
+	bounds: 251, 631, 99, 104
+	offsets: 1, 0, 100, 104
+jizhuigu
+	bounds: 500, 968, 81, 55
+kouzhao
+	bounds: 608, 891, 71, 56
+	offsets: 3, 0, 74, 56
+kouzhao  halo0
+	bounds: 135, 960, 64, 63
+	offsets: 4, 3, 72, 69
+kouzhao  halo1
+	bounds: 356, 981, 29, 42
+	offsets: 1, 0, 30, 42
+mianju
+	bounds: 772, 326, 103, 251
+	rotate: 90
+mianju  yanjing
+	bounds: 581, 996, 45, 27
+neiyi
+	bounds: 808, 652, 83, 68
+qugan
+	bounds: 345, 337, 191, 467
+	rotate: 270
+shadow0
+	bounds: 1, 456, 273, 567
+shadow1
+	bounds: 275, 639, 353, 384
+	offsets: 0, 2, 353, 392
+shengzi shipin
+	bounds: 9, 351, 181, 156
+	rotate: 90
+toufasi0
+	bounds: 1, 910, 59, 113
+toufasi1
+	bounds: 56, 928, 33, 95
+	offsets: 0, 0, 34, 95
+yinmao
+	bounds: 32, 1007, 24, 16
