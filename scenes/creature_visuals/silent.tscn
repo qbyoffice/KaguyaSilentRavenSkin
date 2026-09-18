@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkx1yh2d3gj"]
+[gd_scene load_steps=6 format=3 uid="uid://dkx1yh2d3gj"]
 
 [ext_resource type="Script" uid="uid://ba017jerstwws" path="res://src/Core/Nodes/Combat/SNCreatureVisuals.cs" id="1_wu0gt"]
 [ext_resource type="SpineSkeletonDataResource" uid="uid://cxo52bhiwgu1y" path="res://silent/animations/characters/silent_skel_data.tres" id="2_wu0gt"]
 [ext_resource type="SpineSkeletonDataResource" uid="uid://d35rhsenu0mg2" path="res://silent/animations/characters/silent_neko_skel_data.tres" id="3_wu0gt"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://bb7jgyoa3gttg" path="res://silent/animations/characters/silent_nsfw_skel_data.tres" id="4_2xhdp"]
+[ext_resource type="SpineSkeletonDataResource" uid="uid://b7srd4b6ev2ca" path="res://silent/animations/characters/silent_neko_nsfw_skel_data.tres" id="5_pqjm5"]
 
 [node name="Silent" type="Node2D"]
 script = ExtResource("1_wu0gt")
@@ -16,7 +18,7 @@ anchors_preset = 0
 [node name="Visuals" type="SpineSprite" parent="."]
 skeleton_data_res = ExtResource("2_wu0gt")
 preview_skin = "Default"
-preview_animation = "die"
+preview_animation = "idle_loop"
 preview_frame = false
 preview_time = 0.0
 unique_name_in_owner = true
@@ -27,12 +29,36 @@ metadata/_edit_lock_ = true
 [node name="Visuals_neko" type="SpineSprite" parent="."]
 skeleton_data_res = ExtResource("3_wu0gt")
 preview_skin = "Default"
-preview_animation = "die"
+preview_animation = "idle_loop"
 preview_frame = false
 preview_time = 0.0
 unique_name_in_owner = true
 visible = false
 show_behind_parent = true
+position = Vector2(5, -2)
+scale = Vector2(0.35, 0.35)
+metadata/_edit_lock_ = true
+
+[node name="Visuals_nsfw" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("4_2xhdp")
+preview_skin = "Default"
+preview_animation = "idle_loop"
+preview_frame = false
+preview_time = 0.0
+unique_name_in_owner = true
+visible = false
+position = Vector2(5, -2)
+scale = Vector2(0.35, 0.35)
+metadata/_edit_lock_ = true
+
+[node name="Visuals_nsfw_cat" type="SpineSprite" parent="."]
+skeleton_data_res = ExtResource("5_pqjm5")
+preview_skin = "Default"
+preview_animation = "idle_loop"
+preview_frame = false
+preview_time = 0.0
+unique_name_in_owner = true
+visible = false
 position = Vector2(5, -2)
 scale = Vector2(0.35, 0.35)
 metadata/_edit_lock_ = true

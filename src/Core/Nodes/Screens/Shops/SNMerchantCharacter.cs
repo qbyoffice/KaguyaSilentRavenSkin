@@ -7,65 +7,66 @@ namespace SilentSkinMod.Core.Nodes.Screens.Shops;
 [GlobalClass]
 public partial class SNMerchantCharacter : NMerchantCharacter
 {
-    private MegaSprite _spineMega;               
-    private Node2D _nekoNode;                    
-    private MegaSkeletonDataResource _originalData;
-    private MegaSkeletonDataResource _nekoData;
-    private bool _isNekoActive = false;
+	private MegaSprite _spineMega;
+	private MegaSkeletonDataResource _liveData;
+	private MegaSkeletonDataResource _nekoData;
+	private MegaSkeletonDataResource _nsfwData;
+	private MegaSkeletonDataResource _nsfwCatData;
 
-    public override void _Ready()
-    {
-        base._Ready();
+	public override void _Ready()
+	{
+		base._Ready();
 
-        var spineNode = GetNode<Node2D>("SpineSprite");
-        _nekoNode = GetNode<Node2D>("SpineSprite_neko");
-        
-        
-        _spineMega = new MegaSprite(spineNode);
+		var spineNode = GetNode<Node2D>("SpineSprite");
+		_spineMega = new MegaSprite(Variant.From(spineNode));
+		_liveData = _spineMega.GetSkeleton()?.GetData();
 
+		_nekoData    = ExtractSkeletonData("SpineSprite_neko");
+		_nsfwData    = ExtractSkeletonData("SpineSprite_nsfw");
+		_nsfwCatData = ExtractSkeletonData("SpineSprite_nsfw_cat");
 
-        var skeleton = _spineMega.GetSkeleton();
-        if (skeleton != null)
-            _originalData = skeleton.GetData();
+		HeadVisibilityBus.OnModeChanged += OnModeChanged;
+		ApplyMode(HeadVisibilityBus.CurrentMode);
+	}
 
-        var nekoSkeleton = new MegaSprite(_nekoNode).GetSkeleton();
-        if (nekoSkeleton != null)
-            _nekoData = nekoSkeleton.GetData();
+	private MegaSkeletonDataResource ExtractSkeletonData(string path)
+	{
+		var node = GetNodeOrNull<Node2D>(path);
+		if (node == null) return null;
+		node.Visible = false;
+		return new MegaSprite(Variant.From(node)).GetSkeleton()?.GetData();
+	}
 
-        _nekoNode.Visible = false;
+	private void OnModeChanged(CharacterMode mode) => ApplyMode(mode);
 
-        HeadVisibilityBus.OnVisibilityChanged += OnVisibilityChanged;
-        ApplyModelVisibility(HeadVisibilityBus.IsHidden);
-    }
+	private void ApplyMode(CharacterMode mode)
+	{
+		if (_spineMega == null) return;
 
-    private void OnVisibilityChanged(bool hidden) => ApplyModelVisibility(hidden);
+		MegaSkeletonDataResource target = mode switch
+		{
+			CharacterMode.Live     => _liveData,
+			CharacterMode.LiveCat  => _nekoData,
+			CharacterMode.Nsfw     => _nsfwData,
+			CharacterMode.NsfwCat  => _nsfwCatData,
+			_ => _liveData
+		};
 
-    private void ApplyModelVisibility(bool hidden)
-    {
-        if (_spineMega == null || _nekoData == null || _originalData == null) return;
+		if (target == null)
+		{
+			GD.PrintErr($"[SNMerchantCharacter] 模式 {mode} 的骨架数据不存在");
+			return;
+		}
 
-        if (hidden && !_isNekoActive)
-        {
-            _spineMega.SetSkeletonDataRes(_nekoData);
-            _spineMega.GetSkeleton()?.SetSlotsToSetupPose();
-            PlayAnimation("relaxed_loop", loop: true);
-            _isNekoActive = true;
-            GD.Print("[KaguyaSilentNMerchantCharacter] Switched to Neko data");
-        }
-        else if (!hidden && _isNekoActive)
-        {
-            _spineMega.SetSkeletonDataRes(_originalData);
-            _spineMega.GetSkeleton()?.SetSlotsToSetupPose();
-            PlayAnimation("relaxed_loop", loop: true);
-            _isNekoActive = false;
-            GD.Print("[KaguyaSilentNMerchantCharacter] Switched to Original data");
-        }
-    }
+		_spineMega.SetSkeletonDataRes(target);
+		_spineMega.GetSkeleton()?.SetSlotsToSetupPose();
+		PlayAnimation("relaxed_loop", loop: true);
+		GD.Print($"[SNMerchantCharacter] 切换到 {mode}");
+	}
 
-    public override void _ExitTree()
-    {
-        HeadVisibilityBus.OnVisibilityChanged -= OnVisibilityChanged;
-        _spineMega?.Dispose();
-        base._ExitTree();
-    }
+	public override void _ExitTree()
+	{
+		HeadVisibilityBus.OnModeChanged -= OnModeChanged;
+		base._ExitTree();
+	}
 }
