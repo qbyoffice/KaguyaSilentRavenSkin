@@ -12,13 +12,13 @@
 [ext_resource type="Script" uid="uid://dsnksqk0f4tja" path="res://src/Core/HeadBoneClickToggle.cs" id="11_3lbej"]
 [ext_resource type="Script" uid="uid://b65uwe7w48kg8" path="res://src/Core/Nodes/Animation/KaguyaSilentHeadPressInteractor.cs" id="11_xp3hp"]
 [ext_resource type="Script" uid="uid://bo5ai6jesch3v" path="res://src/Core/KaguyaSelectUI/MenuRoot.gd" id="15_d3thw"]
-[ext_resource type="Texture2D" uid="uid://d038w2lax7elv" path="res://silent/animations/silent_button/frame/frame_off.png" id="15_vq3mu"]
-[ext_resource type="Texture2D" uid="uid://tmbfoinhnnjw" path="res://silent/animations/silent_button/off.png" id="16_d3thw"]
-[ext_resource type="Texture2D" uid="uid://cjbwid1inf40" path="res://silent/animations/silent_button/frame/frame.png" id="16_hqyr3"]
-[ext_resource type="Texture2D" uid="uid://cy50eqh0jaoda" path="res://silent/animations/silent_button/Hover.png" id="17_o2o77"]
-[ext_resource type="Texture2D" uid="uid://b0xlqj5xaa37h" path="res://silent/animations/silent_button/frame/frame_Hover.png" id="18_ajvnn"]
-[ext_resource type="Texture2D" uid="uid://doggr7xcm8gf" path="res://silent/animations/silent_button/click.png" id="18_kqwxe"]
-[ext_resource type="Texture2D" uid="uid://uuqpxeiw837x" path="res://silent/animations/silent_button/on.png" id="19_jqgyh"]
+[ext_resource type="Texture2D" uid="uid://du5hj4sl4xcbj" path="res://silent/animations/silent_button/frame/frame_off.png" id="15_vq3mu"]
+[ext_resource type="Texture2D" uid="uid://dbcyh8qyumg4r" path="res://silent/animations/silent_button/off.png" id="16_d3thw"]
+[ext_resource type="Texture2D" uid="uid://b5jgoomvprhm5" path="res://silent/animations/silent_button/frame/frame.png" id="16_hqyr3"]
+[ext_resource type="Texture2D" uid="uid://dbxtbtdgc8i5" path="res://silent/animations/silent_button/Hover.png" id="17_o2o77"]
+[ext_resource type="Texture2D" uid="uid://b4ax1010c5f6p" path="res://silent/animations/silent_button/frame/frame_Hover.png" id="18_ajvnn"]
+[ext_resource type="Texture2D" uid="uid://f3jl3u1058sj" path="res://silent/animations/silent_button/click.png" id="18_kqwxe"]
+[ext_resource type="Texture2D" uid="uid://cqu825mowmipv" path="res://silent/animations/silent_button/on.png" id="19_jqgyh"]
 [ext_resource type="Material" uid="uid://c4ycqv0gdxvmr" path="res://themes/canvas_item_material_additive_shared.tres" id="shared_additive_mat"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d3thw"]
@@ -314,7 +314,6 @@ tex_normal_list = Array[Texture2D]([ExtResource("16_d3thw"), ExtResource("16_d3t
 tex_hover_list = Array[Texture2D]([ExtResource("17_o2o77"), ExtResource("17_o2o77"), ExtResource("17_o2o77"), ExtResource("17_o2o77")])
 tex_pressed_list = Array[Texture2D]([ExtResource("18_kqwxe"), ExtResource("18_kqwxe"), ExtResource("18_kqwxe"), ExtResource("18_kqwxe")])
 tex_selected_list = Array[Texture2D]([ExtResource("19_jqgyh"), ExtResource("19_jqgyh"), ExtResource("19_jqgyh"), ExtResource("19_jqgyh")])
-option_width = 195.0
 option_height = 50.0
 option_gap = 0.0
 
