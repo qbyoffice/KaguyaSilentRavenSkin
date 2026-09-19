@@ -14,10 +14,13 @@ public partial class SNCreatureVisuals : NCreatureVisuals
 	private MegaSkeletonDataResource _nekoData;
 	private MegaSkeletonDataResource _nsfwData;
 	private MegaSkeletonDataResource _nsfwCatData;
+	private CharacterMode _lastMode = (CharacterMode)(-1);
 
 	public override void _Ready()
 	{
 		base._Ready();
+		
+		HeadVisibilityBus.EnsureInitialized();
 
 		if (SpineBody != null)
 			_liveData = SpineBody.GetSkeleton()?.GetData();
@@ -27,7 +30,8 @@ public partial class SNCreatureVisuals : NCreatureVisuals
 		_nsfwCatData = ExtractSkeletonData("%Visuals_nsfw_cat");
 
 		HeadVisibilityBus.OnModeChanged += OnModeChanged;
-		ApplyMode(HeadVisibilityBus.CurrentMode);
+		
+		ApplyMode(HeadVisibilityBus.CurrentMode, force: true);
 	}
 
 	private MegaSkeletonDataResource ExtractSkeletonData(string path)
@@ -40,16 +44,17 @@ public partial class SNCreatureVisuals : NCreatureVisuals
 
 	private void OnModeChanged(CharacterMode mode) => ApplyMode(mode);
 
-	private void ApplyMode(CharacterMode mode)
+	private void ApplyMode(CharacterMode mode, bool force = false)
 	{
 		if (SpineBody == null) return;
+		if (!force && mode == _lastMode) return;
 
 		MegaSkeletonDataResource target = mode switch
 		{
-			CharacterMode.Live     => _liveData,
-			CharacterMode.LiveCat  => _nekoData,
-			CharacterMode.Nsfw     => _nsfwData,
-			CharacterMode.NsfwCat  => _nsfwCatData,
+			CharacterMode.Live    => _liveData,
+			CharacterMode.LiveCat => _nekoData,
+			CharacterMode.Nsfw    => _nsfwData,
+			CharacterMode.NsfwCat => _nsfwCatData,
 			_ => _liveData
 		};
 
@@ -60,7 +65,7 @@ public partial class SNCreatureVisuals : NCreatureVisuals
 		}
 
 		SpineBody.SetSkeletonDataRes(target);
-		SpineBody.GetSkeleton()?.SetSlotsToSetupPose();
+		_lastMode = mode;
 
 		RefreshAnimator();
 		GD.Print($"[KaguyaSilentRavenSkin][SNCreatureVisuals] 切换到 {mode}");

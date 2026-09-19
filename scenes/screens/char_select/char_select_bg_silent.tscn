@@ -21,9 +21,11 @@
 [ext_resource type="Texture2D" uid="uid://uuqpxeiw837x" path="res://silent/animations/silent_button/on.png" id="19_jqgyh"]
 [ext_resource type="Material" uid="uid://c4ycqv0gdxvmr" path="res://themes/canvas_item_material_additive_shared.tres" id="shared_additive_mat"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d3thw"]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vq3mu"]
 shader = ExtResource("3_d7gfu")
-shader_parameter/OuterColor = Color(0.190701, 0.255694, 0.0401071, 0.541176)
+shader_parameter/OuterColor = Color(0.12955844, 0.1295585, 0.12955841, 0.4117647)
 shader_parameter/InnerColorStep = Vector2(0.975, 0.99)
 shader_parameter/Noise2Strength = 1.0
 shader_parameter/Noise2Scaling = Vector2(0.5, 0.5)
@@ -51,7 +53,9 @@ shader_parameter/DistortionMask = ExtResource("6_4op7v")
 shader_parameter/InnerColor = Color(0, 0, 0, 1)
 shader_parameter/OuterStep = Vector2(0.285, 0.99)
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_d3thw"]
+[sub_resource type="Gradient" id="Gradient_8v4pi"]
+offsets = PackedFloat32Array(0, 0.178337)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
 
 [sub_resource type="Curve" id="Curve_a3cof"]
 _data = [Vector2(0, 0.417635), 0.0, 0.0, 0, 0, Vector2(0.502521, 0.507939), 0.0, 0.0, 0, 0, Vector2(1, 0.423164), 0.0, 0.0, 0, 0]
@@ -61,10 +65,6 @@ point_count = 3
 offsets = PackedFloat32Array(0, 0.607407, 0.994413)
 colors = PackedColorArray(0.427493, 0.427493, 0.427493, 1, 1, 1, 1, 1, 0.427451, 0.427451, 0.427451, 1)
 
-[sub_resource type="Gradient" id="Gradient_8v4pi"]
-offsets = PackedFloat32Array(0, 0.178337)
-colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1)
-
 [node name="SilentBg" type="Control"]
 layout_mode = 3
 anchors_preset = 8
@@ -72,19 +72,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -960.0
+offset_left = -963.0
 offset_top = -521.0
-offset_right = 1600.0
+offset_right = 1597.0
 offset_bottom = 679.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(1280, 600)
-
-[node name="stink_lines" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_vq3mu")
-position = Vector2(950, 659)
-scale = Vector2(9.76582, 4.88672)
-texture = ExtResource("7_i05fu")
 
 [node name="SpineSprite" type="SpineSprite" parent="."]
 skeleton_data_res = ExtResource("6_catwu")
@@ -243,24 +237,14 @@ material = SubResource("CanvasItemMaterial_d3thw")
 script = ExtResource("7_8v4pi")
 metadata/_custom_type_script = "uid://b0oho7pjc1dtg"
 
-[node name="light_small2" type="CPUParticles2D" parent="."]
-material = ExtResource("shared_additive_mat")
-position = Vector2(1638, -51)
-rotation = 3.1032
-amount = 1
-texture = ExtResource("5_xp3hp")
-lifetime = 3.0
-local_coords = true
-gravity = Vector2(0, 0)
-scale_amount_min = 20.0
-scale_amount_max = 20.0
-scale_amount_curve = SubResource("Curve_a3cof")
-color = Color(0.670657, 0.444708, 5.77569e-07, 0.4)
-color_ramp = SubResource("Gradient_ajvnn")
-script = ExtResource("8_catwu")
+[node name="stink_lines" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vq3mu")
+position = Vector2(1014.00006, 1040)
+scale = Vector2(9.76582, 4.88672)
+texture = ExtResource("7_i05fu")
 
 [node name="ash2" type="CPUParticles2D" parent="."]
-position = Vector2(-69, 1361)
+position = Vector2(162, 1229)
 amount = 20
 texture = ExtResource("9_3lbej")
 lifetime = 15.0
@@ -293,6 +277,23 @@ scale_amount_max = 0.3
 color = Color(0.501961, 0.701961, 0.270588, 0.431373)
 color_ramp = SubResource("Gradient_8v4pi")
 
+[node name="light_small2" type="CPUParticles2D" parent="."]
+visible = false
+material = ExtResource("shared_additive_mat")
+position = Vector2(1638, -82)
+rotation = 3.1032
+amount = 1
+texture = ExtResource("5_xp3hp")
+lifetime = 3.0
+local_coords = true
+gravity = Vector2(0, 0)
+scale_amount_min = 20.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_a3cof")
+color = Color(0.1498617, 0.62468, 0.73712325, 0.4)
+color_ramp = SubResource("Gradient_ajvnn")
+script = ExtResource("8_catwu")
+
 [node name="Press_Head" type="Control" parent="."]
 anchors_preset = 0
 offset_left = 1545.0
@@ -303,10 +304,10 @@ script = ExtResource("11_xp3hp")
 
 [node name="MenuRoot" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 150.0
-offset_top = 62.0
-offset_right = 190.0
-offset_bottom = 102.0
+offset_left = 1792.0
+offset_top = 635.0
+offset_right = 1832.0
+offset_bottom = 675.0
 script = ExtResource("15_d3thw")
 option_names = Array[String](["Live mode", "Live mode_cat", "NSFW", "NSFW_cat"])
 tex_normal_list = Array[Texture2D]([ExtResource("16_d3thw"), ExtResource("16_d3thw"), ExtResource("16_d3thw"), ExtResource("16_d3thw")])
@@ -316,6 +317,14 @@ tex_selected_list = Array[Texture2D]([ExtResource("19_jqgyh"), ExtResource("19_j
 option_width = 195.0
 option_height = 50.0
 option_gap = 0.0
+
+[node name="DragHandle" type="Button" parent="MenuRoot"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -36.0
+offset_right = 45.0
+offset_bottom = -5.0
+text = "Move"
 
 [node name="SettingsIcon" type="TextureButton" parent="MenuRoot"]
 layout_mode = 0
