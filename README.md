@@ -1,7 +1,7 @@
 > [!IMPORTANT]
 > **许可证声明**
 > 
-> - 源代码：采用 [PolyForm Noncommercial License 1.0.0](LICENSE)。允许非商业使用、修改和分发，**禁止任何商业用途**。这不是 OSI 开源许可证。
+> - 源代码：采用 [GNU General Public License v3.0](LICENSE)。允许商业使用、修改和分发；但任何衍生作品必须继续采用 GPL-3.0 许可，并在分发时提供完整对应源代码。
 > - 美术资产：版权归画师所有[白宵耀夜](https://www.pixiv.net/users/3850666)。采用 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) 许可协议，详见 [LICENSE-ART](LICENSE-ART)。允许非商业原样分享，必须署名；禁止商用、禁止修改、禁止二次创作。未经画师明确书面授权，禁止用于 AI 训练。
 > - 源代码仓库：https://github.com/qbyoffice/KaguyaSilentRavenSkin
 
