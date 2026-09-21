@@ -1,26 +1,51 @@
 Art Assets License / Notice
-Copyright (c) 2026 青白影 / 画师：白宵燿夜（Shirayoi=Kaguya）/动画师：小丧狗
-All Rights Reserved.
+Copyright (c) 2026 画师：白宵燿夜（Shirayoi=Kaguya）
+Pixiv: https://www.pixiv.net/users/3850666
 
-所有美术资产（包括但不限于原画、立绘、动画、设定稿、图标、界面素材等）
-不适用本仓库源代码的 MIT License。
-版权归画师所有，保留所有权利。
+本仓库中的所有美术资产（包括但不限于原画、立绘、动画、设定稿、图标、界面素材等）
+采用 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+(CC BY-NC-ND 4.0) 许可协议。
 
-未经画师明确书面授权，禁止任何形式的：
-- 复制、转载、再分发
-- 修改、二次创作、演绎
-- 商用、出售、用于产生收入的产品或服务
-- 用于 AI 训练
+许可证摘要：
+https://creativecommons.org/licenses/by-nc-nd/4.0/
 
-唯一允许的使用范围：在游戏《Slay the Spire 2》中作为本 Mod 的一部分使用。
-超出上述范围的使用，均需获得画师的明确书面授权。
+许可证全文：
+https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
 
-All art assets are NOT covered by the MIT License applied to the source code.
-Copyright belongs to the artist. All rights reserved.
+您可以：
+- 在非商业目的下分享、复制、发行本作品的原样副本。
 
-No permission is granted to copy, redistribute, modify, create derivatives,
-use commercially, sell, sublicense, or use for AI training without the
-artist's explicit written permission.
+但必须遵守：
+- 署名：必须注明作者（画师）和来源，并附上许可证链接。
+- 非商业：不得用于商业目的。
+- 禁止演绎：不得修改、改编、翻译、汇编或基于本作品创作衍生作品。
+- 不得附加法律条款或技术措施限制他人做许可证允许的事。
 
-The only permitted use is within the game "Slay the Spire 2" as part of this Mod.
-Any other use requires explicit written permission from the artist.
+额外声明：
+未经画师明确书面授权，禁止将美术资产用于 AI 训练。
+本许可仅适用于美术资产，不适用于源代码。
+源代码采用 PolyForm Noncommercial License 1.0.0。
+
+All art assets in this repository are licensed under the
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+(CC BY-NC-ND 4.0) license.
+
+License summary:
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+Legal code:
+https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode
+
+You may share, copy, and redistribute the material in any medium or format
+for non-commercial purposes only, provided that you give appropriate credit,
+provide a link to the license, and do not modify the material.
+
+You may not use the material for commercial purposes.
+You may not remix, transform, or build upon the material.
+
+Additional notice:
+Use of the art assets for AI training is prohibited without the artist's
+explicit written permission.
+
+This license applies only to art assets, not to the source code.
+The source code is licensed under the PolyForm Noncommercial License 1.0.0.
