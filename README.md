@@ -2,7 +2,7 @@
 > **许可证声明**
 > 
 > - 源代码：采用 [GNU General Public License v3.0](LICENSE)。允许商业使用、修改和分发；但任何衍生作品必须继续采用 GPL-3.0 许可，并在分发时提供完整对应源代码。
-> - 美术资产：版权归画师所有[白宵耀夜](https://www.pixiv.net/users/3850666)。采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) 许可协议，详见 [LICENSE-ART](LICENSE-ART)。允允许非商业分享和非商业同人创作，必须署名；禁止商用。未经画师明确书面授权，禁止用于 AI 训练。
+> - 美术资产：版权归画师所有[白宵耀夜](https://www.pixiv.net/users/3850666)。采用 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) 许可协议，详见 [LICENSE-ART](LICENSE-ART)。允许非商业分享和非商业同人创作，必须署名；禁止商用。未经画师明确书面授权，禁止用于 AI 训练。
 > - 源代码仓库：https://github.com/qbyoffice/KaguyaSilentRavenSkin
 
 # 渡鸦疫医 · KaguyaSilentRavenSkin
