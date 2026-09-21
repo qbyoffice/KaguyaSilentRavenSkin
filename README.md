@@ -2,7 +2,7 @@
 > **许可证声明**
 > 
 > - 源代码：采用 [PolyForm Noncommercial License 1.0.0](LICENSE)。允许非商业使用、修改和分发，**禁止任何商业用途**。这不是 OSI 开源许可证。
-> - 美术资产：版权归画师所有。画师 (https://www.pixiv.net/users/3850666)。采用 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) 许可协议，详见 [LICENSE-ART](LICENSE-ART)。允许非商业原样分享，必须署名；禁止商用、禁止修改、禁止二次创作。未经画师明确书面授权，禁止用于 AI 训练。
+> - 美术资产：版权归画师所有。画师 (https://www.pixiv.net/users/3850666)。\n采用 [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/) 许可协议，详见 [LICENSE-ART](LICENSE-ART)。允许非商业原样分享，必须署名；禁止商用、禁止修改、禁止二次创作。未经画师明确书面授权，禁止用于 AI 训练。
 > - 源代码仓库：https://github.com/qbyoffice/KaguyaSilentRavenSkin
 
 # 渡鸦疫医 · KaguyaSilentRavenSkin
