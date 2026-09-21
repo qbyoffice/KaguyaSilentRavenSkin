@@ -1,7 +1,8 @@
 > [!IMPORTANT]
 > **开源声明**
-- 源代码：采用标准 [MIT License](LICENSE)。允许使用、复制、修改、合并、发布、分发、再许可和出售，允许商业使用。
-- 美术资产：版权归画师所有，保留所有权利。详见 [LICENSE-ART](LICENSE-ART)。仅允许在游戏《Slay the Spire 2》中作为本 Mod 的一部分使用；未经画师明确书面授权，禁止复制、转载、修改、商用、再分发或用于 AI 训练。
+> 
+> - 源代码：采用标准 [MIT License](LICENSE)。允许使用、复制、修改、合并、发布、分发、再许可和出售，允许商业使用。
+> - 美术资产：版权归画师所有，保留所有权利。详见 [LICENSE-ART](LICENSE-ART)。仅允许在游戏《Slay the Spire 2》中作为本 Mod 的一部分使用；未经画师明确书面授权，禁止复制、转载、修改、商用、再分发或用于 AI 训练。
 
 # 渡鸦疫医 · KaguyaSilentRavenSkin
 
