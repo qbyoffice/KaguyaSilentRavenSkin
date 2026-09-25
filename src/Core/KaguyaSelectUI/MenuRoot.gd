@@ -41,6 +41,10 @@ var _tween: Tween
 var _dragging := false
 var _drag_offset := Vector2.ZERO
 
+var _select_screen: Control
+var _menu_layer: CanvasLayer
+var _selection_confirmed := false
+
 
 func _read_json_safe(path: String) -> Dictionary:
 	if not FileAccess.file_exists(path):
@@ -99,6 +103,51 @@ func _ready() -> void:
 	_load_saved()
 	_set_open(false, true)
 	settings_icon.button_pressed = false
+	_bind_select_screen()
+
+# The game's NConfirmButton emits the C# signal Released, not Button.pressed.
+# Find the owning screen through ancestors so other screens' buttons are untouched.
+func _bind_select_screen() -> void:
+	_menu_layer = get_parent() as CanvasLayer
+	if _menu_layer == null or _menu_layer.name != &"KuguyaLayer":
+		return
+	var ancestor: Node = _menu_layer.get_parent()
+	while ancestor != null:
+		var confirm := ancestor.get_node_or_null("ConfirmButton")
+		if ancestor is Control and confirm != null and confirm.has_signal(&"Released"):
+			_select_screen = ancestor as Control
+			confirm.connect(&"Released", _on_select_confirmed)
+			var unready := ancestor.get_node_or_null("UnreadyButton")
+			if unready != null and unready.has_signal(&"Released"):
+				unready.connect(&"Released", _on_select_unready)
+			_select_screen.visibility_changed.connect(_on_select_visibility_changed)
+			_sync_select_visibility()
+			return
+		ancestor = ancestor.get_parent()
+
+func _on_select_confirmed(_button: Node) -> void:
+	_selection_confirmed = true
+	_dragging = false
+	if _tween and _tween.is_valid():
+		_tween.kill()
+	_sync_select_visibility()
+
+func _on_select_unready(_button: Node) -> void:
+	_selection_confirmed = false
+	_sync_select_visibility()
+
+func _on_select_visibility_changed() -> void:
+	if is_instance_valid(_select_screen) and _select_screen.is_visible_in_tree():
+		_selection_confirmed = false
+	_sync_select_visibility()
+
+func _sync_select_visibility() -> void:
+	if not is_instance_valid(_select_screen) or not is_instance_valid(_menu_layer):
+		return
+	# CanvasLayer visibility must be synchronized explicitly with the screen.
+	var show_menu := _select_screen.is_visible_in_tree() and not _selection_confirmed
+	_menu_layer.visible = show_menu
+	set_process_input(show_menu)
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST or what == NOTIFICATION_PREDELETE:
