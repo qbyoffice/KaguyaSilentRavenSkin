@@ -28,7 +28,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Book.StS2.RefLib" Version="0.111.0-beta" />
+      <PackageReference Include="Book.StS2.RefLib" Version="0.107.1" />
     </ItemGroup>
 
     <ItemGroup>
