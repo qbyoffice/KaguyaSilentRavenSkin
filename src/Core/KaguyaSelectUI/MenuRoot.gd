@@ -2,7 +2,7 @@ extends Control
 
 signal option_selected(index: int, option_name: String)
 
-@export var option_names: Array[String] = ["直播模式", "直播模式_猫", "NSFW", "NSFW_猫"]
+@export var option_names: Array[String] = ["直播模式", "直播模式_猫", "Vainilla", "Vainilla_猫"]
 
 @export_group("选项图片差分")
 @export var tex_normal_list:   Array[Texture2D] = []
@@ -93,6 +93,7 @@ func _write_json_atomic(path: String, data: Dictionary) -> void:
 			f2.close()
 
 func _ready() -> void:
+	add_to_group("kaguya_mode_selectors")
 	DirAccess.make_dir_recursive_absolute(SAVE_DIR)
 
 	settings_icon.pressed.connect(_toggle)
@@ -105,8 +106,9 @@ func _ready() -> void:
 	settings_icon.button_pressed = false
 	_bind_select_screen()
 
-# The game's NConfirmButton emits the C# signal Released, not Button.pressed.
-# Find the owning screen through ancestors so other screens' buttons are untouched.
+func reload_saved_mode() -> void:
+	_select(_load_mode(), true)
+
 func _bind_select_screen() -> void:
 	_menu_layer = get_parent() as CanvasLayer
 	if _menu_layer == null or _menu_layer.name != &"KuguyaLayer":
