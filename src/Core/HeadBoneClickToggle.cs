@@ -47,7 +47,7 @@ public partial class HeadBoneClickToggle : Control
 			_spineSprite.Connect("world_transforms_changed",
 				new Callable(this, nameof(OnWorldTransformsChanged)));
 
-		var menuRoot = GetNodeOrNull<Node>("../MenuRoot");
+		var menuRoot = GetNodeOrNull<Node>("../KuguyaLayer/MenuRoot");
 		if (menuRoot != null && menuRoot.HasSignal("option_selected"))
 			menuRoot.Connect("option_selected",
 				new Callable(this, nameof(OnOptionSelected)));

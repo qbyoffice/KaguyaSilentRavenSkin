@@ -302,12 +302,23 @@ offset_right = 1732.0
 offset_bottom = 429.0
 script = ExtResource("11_xp3hp")
 
-[node name="MenuRoot" type="Control" parent="."]
+[node name="HeadBoneClickToggle" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 1792.0
-offset_top = 635.0
-offset_right = 1832.0
-offset_bottom = 675.0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("11_3lbej")
+
+[node name="KuguyaLayer" type="CanvasLayer" parent="."]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="MenuRoot" type="Control" parent="KuguyaLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1405.0
+offset_top = 438.0
+offset_right = 1445.0
+offset_bottom = 478.0
 script = ExtResource("15_d3thw")
 option_names = Array[String](["Live mode", "Live mode_cat", "NSFW", "NSFW_cat"])
 tex_normal_list = Array[Texture2D]([ExtResource("16_d3thw"), ExtResource("16_d3thw"), ExtResource("16_d3thw"), ExtResource("16_d3thw")])
@@ -317,7 +328,7 @@ tex_selected_list = Array[Texture2D]([ExtResource("19_jqgyh"), ExtResource("19_j
 option_height = 50.0
 option_gap = 0.0
 
-[node name="DragHandle" type="Button" parent="MenuRoot"]
+[node name="DragHandle" type="Button" parent="KuguyaLayer/MenuRoot"]
 layout_mode = 0
 offset_left = -6.0
 offset_top = -36.0
@@ -325,23 +336,17 @@ offset_right = 45.0
 offset_bottom = -5.0
 text = "Move"
 
-[node name="SettingsIcon" type="TextureButton" parent="MenuRoot"]
+[node name="SettingsIcon" type="TextureButton" parent="KuguyaLayer/MenuRoot"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 228.0
+offset_bottom = 44.0
 toggle_mode = true
 texture_normal = ExtResource("15_vq3mu")
 texture_pressed = ExtResource("16_hqyr3")
 texture_hover = ExtResource("18_ajvnn")
 
-[node name="OptionsRoot" type="Control" parent="MenuRoot"]
+[node name="OptionsRoot" type="Control" parent="KuguyaLayer/MenuRoot"]
 anchors_preset = 0
 offset_top = 44.0
 offset_right = 40.0
 offset_bottom = 84.0
-
-[node name="HeadBoneClickToggle" type="Control" parent="."]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("11_3lbej")
