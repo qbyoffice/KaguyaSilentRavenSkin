@@ -105,8 +105,6 @@ public partial class KaguyaStartupPopup : Control, IScreenContext
         float left, float width, Action action)
     {
         button.DisconnectHotkeys();
-        // The 0.107.1 cancel-button scene does not contain HotkeyIcon. Keep this
-        // optional so the popup works across the 0.107.1/0.111 scene variants.
         button.GetNodeOrNull<Control>("HotkeyIcon")?.Hide();
         button.FocusMode = FocusModeEnum.All;
         button.SetAnchorsAndOffsetsPreset(LayoutPreset.TopLeft);
