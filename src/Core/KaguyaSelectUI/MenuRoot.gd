@@ -2,7 +2,9 @@ extends Control
 
 signal option_selected(index: int, option_name: String)
 
-@export var option_names: Array[String] = ["直播模式", "直播模式_猫", "NSFW", "NSFW_猫"]
+@export var option_names_english: Array[String] = ["Live mode", "Live mode_cat", "NSFW", "NSFW_cat"]
+@export var option_names_chinese: Array[String] = ["直播模式", "直播模式_猫", "NSFW", "NSFW_猫"]
+var option_names: Array[String] = []
 
 @export_group("选项图片差分")
 @export var tex_normal_list:   Array[Texture2D] = []
@@ -90,6 +92,7 @@ func _write_json_atomic(path: String, data: Dictionary) -> void:
 
 func _ready() -> void:
 	DirAccess.make_dir_recursive_absolute(SAVE_DIR)
+	_apply_locale_text()
 
 	settings_icon.pressed.connect(_toggle)
 	drag_handle.button_down.connect(_on_handle_down)
@@ -100,7 +103,17 @@ func _ready() -> void:
 	_set_open(false, true)
 	settings_icon.button_pressed = false
 
+func _apply_locale_text() -> void:
+	var locale := TranslationServer.get_locale().to_lower()
+	var is_chinese := locale.begins_with("zh")
+	option_names = (option_names_chinese if is_chinese else option_names_english).duplicate()
+	drag_handle.text = "移动" if is_chinese else "Move"
+	for i in mini(_options.size(), option_names.size()):
+		_options[i].label.text = option_names[i]
+
 func _notification(what: int) -> void:
+	if what == NOTIFICATION_TRANSLATION_CHANGED:
+		_apply_locale_text()
 	if what == NOTIFICATION_WM_CLOSE_REQUEST or what == NOTIFICATION_PREDELETE:
 		_save_layout()
 		_save_mode()

@@ -47,10 +47,7 @@ public partial class HeadBoneClickToggle : Control
 			_spineSprite.Connect("world_transforms_changed",
 				new Callable(this, nameof(OnWorldTransformsChanged)));
 
-		var menuRoot = GetNodeOrNull<Node>("../MenuRoot");
-		if (menuRoot != null && menuRoot.HasSignal("option_selected"))
-			menuRoot.Connect("option_selected",
-				new Callable(this, nameof(OnOptionSelected)));
+		CallDeferred(nameof(ConnectMenuRoot));
 
 		LoadFromJson(out var mode, out _hideMask, out _hideAnquanku);
 		HeadVisibilityBus.SetMode(mode);
@@ -58,6 +55,17 @@ public partial class HeadBoneClickToggle : Control
 		CacheSlots();
 		CaptureOriginalColors(); 
 		ApplySlotVisibility();
+	}
+
+	private void ConnectMenuRoot()
+	{
+		var menuRoot = GetTree().CurrentScene?.FindChild("MenuRoot", true, false)
+			?? GetTree().Root.FindChild("MenuRoot", true, false);
+		if (menuRoot != null && menuRoot.HasSignal("option_selected") &&
+			!menuRoot.IsConnected("option_selected", new Callable(this, nameof(OnOptionSelected))))
+		{
+			menuRoot.Connect("option_selected", new Callable(this, nameof(OnOptionSelected)));
+		}
 	}
 
 	private void OnOptionSelected(int index, string optionName)

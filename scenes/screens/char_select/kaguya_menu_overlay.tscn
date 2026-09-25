@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://b3sulfymxwqo"]
+
+[ext_resource type="Script" uid="uid://bo5ai6jesch3v" path="res://src/Core/KaguyaSelectUI/MenuRoot.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://du5hj4sl4xcbj" path="res://silent/animations/silent_button/frame/frame_off.png" id="2_frame_off"]
+[ext_resource type="Texture2D" uid="uid://dbcyh8qyumg4r" path="res://silent/animations/silent_button/off.png" id="3_off"]
+[ext_resource type="Texture2D" uid="uid://b5jgoomvprhm5" path="res://silent/animations/silent_button/frame/frame.png" id="4_frame"]
+[ext_resource type="Texture2D" uid="uid://dbxtbtdgc8i5" path="res://silent/animations/silent_button/Hover.png" id="5_hover"]
+[ext_resource type="Texture2D" uid="uid://b4ax1010c5f6p" path="res://silent/animations/silent_button/frame/frame_Hover.png" id="6_frame_hover"]
+[ext_resource type="Texture2D" uid="uid://f3jl3u1058sj" path="res://silent/animations/silent_button/click.png" id="7_click"]
+[ext_resource type="Texture2D" uid="uid://cqu825mowmipv" path="res://silent/animations/silent_button/on.png" id="8_on"]
+
+[node name="KaguyaMenuOverlay" type="CanvasLayer"]
+layer = 1000
+
+[node name="MenuRoot" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1410.0
+offset_top = 406.0
+offset_right = 1450.0
+offset_bottom = 446.0
+script = ExtResource("1_menu")
+option_names_english = Array[String](["Live mode", "Live mode_cat", "NSFW", "NSFW_cat"])
+option_names_chinese = Array[String](["直播模式", "直播模式_猫", "NSFW", "NSFW_猫"])
+tex_normal_list = Array[Texture2D]([ExtResource("3_off"), ExtResource("3_off"), ExtResource("3_off"), ExtResource("3_off")])
+tex_hover_list = Array[Texture2D]([ExtResource("5_hover"), ExtResource("5_hover"), ExtResource("5_hover"), ExtResource("5_hover")])
+tex_pressed_list = Array[Texture2D]([ExtResource("7_click"), ExtResource("7_click"), ExtResource("7_click"), ExtResource("7_click")])
+tex_selected_list = Array[Texture2D]([ExtResource("8_on"), ExtResource("8_on"), ExtResource("8_on"), ExtResource("8_on")])
+option_height = 50.0
+option_gap = 0.0
+
+[node name="DragHandle" type="Button" parent="MenuRoot"]
+layout_mode = 0
+offset_left = -6.0
+offset_top = -36.0
+offset_right = 45.0
+offset_bottom = -5.0
+text = "Move"
+
+[node name="SettingsIcon" type="TextureButton" parent="MenuRoot"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+texture_normal = ExtResource("2_frame_off")
+texture_pressed = ExtResource("4_frame")
+texture_hover = ExtResource("6_frame_hover")
+
+[node name="OptionsRoot" type="Control" parent="MenuRoot"]
+anchors_preset = 0
+offset_top = 44.0
+offset_right = 40.0
+offset_bottom = 84.0
