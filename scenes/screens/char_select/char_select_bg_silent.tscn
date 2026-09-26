@@ -310,17 +310,16 @@ script = ExtResource("11_3lbej")
 
 [node name="KuguyaLayer" type="CanvasLayer" parent="."]
 layer = 0
-follow_viewport_enabled = true
 
 [node name="MenuRoot" type="Control" parent="KuguyaLayer"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1405.0
-offset_top = 438.0
-offset_right = 1445.0
-offset_bottom = 478.0
+offset_left = 1808.0
+offset_top = 619.0
+offset_right = 1848.0
+offset_bottom = 659.0
 script = ExtResource("15_d3thw")
-option_names = Array[String](["Live mode", "Live mode_cat", "Vainilla", "Vainilla_cat"])
+option_names = Array[String](["Live mode", "Live mode_cat", "Vanilla", "Vanilla_cat"])
 tex_normal_list = Array[Texture2D]([ExtResource("16_d3thw"), ExtResource("16_d3thw"), ExtResource("16_d3thw"), ExtResource("16_d3thw")])
 tex_hover_list = Array[Texture2D]([ExtResource("17_o2o77"), ExtResource("17_o2o77"), ExtResource("17_o2o77"), ExtResource("17_o2o77")])
 tex_pressed_list = Array[Texture2D]([ExtResource("18_kqwxe"), ExtResource("18_kqwxe"), ExtResource("18_kqwxe"), ExtResource("18_kqwxe")])
