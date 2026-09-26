@@ -27,11 +27,13 @@ const LAYOUT_FILE := "user://Kugaya.skin/KaguyaSilentRavenSkin/layout.json"
 const MODE_FILE   := "user://Kugaya.skin/KaguyaSilentRavenSkin/kaguyaMode.json"
 
 const MODE_VERSION := 2
-const LAYOUT_VERSION := 1
+const LAYOUT_VERSION := 2
+const LAYOUT_LAYER := "KuguyaLayer"
 
 @onready var drag_handle: Button = $DragHandle
 @onready var settings_icon: TextureButton = $SettingsIcon
 @onready var options_root: Control = $OptionsRoot
+@onready var _default_menu_position: Vector2 = position
 
 var _options: Array[OptionItem] = []
 var _is_open := false
@@ -224,7 +226,7 @@ func _on_option_pressed(index: int) -> void:
 
 func _on_handle_down() -> void:
 	_dragging = true
-	_drag_offset = drag_handle.global_position - get_global_mouse_position()
+	_drag_offset = global_position - get_global_mouse_position()
 	_set_open(false)
 
 func _on_handle_up() -> void:
@@ -236,36 +238,33 @@ func _input(event: InputEvent) -> void:
 	if not _dragging:
 		return
 	if event is InputEventMouseMotion:
-		var new_pos: Vector2 = get_global_mouse_position() + _drag_offset
-		var delta: Vector2 = new_pos - drag_handle.global_position
-		drag_handle.global_position = new_pos
-		settings_icon.global_position += delta
-		options_root.global_position += delta
+		global_position = get_global_mouse_position() + _drag_offset
 		get_viewport().set_input_as_handled()
 
 func _save_layout() -> void:
 	var data := {
 		"version": LAYOUT_VERSION,
-		"drag_handle":   [drag_handle.position.x,   drag_handle.position.y],
-		"settings_icon": [settings_icon.position.x, settings_icon.position.y],
-		"options_root":  [options_root.position.x,  options_root.position.y],
+		"layer": LAYOUT_LAYER,
+		"menu_root": [position.x, position.y],
 	}
 	_write_json_atomic(LAYOUT_FILE, data)
 
 func _load_layout() -> void:
 	var data := _read_json_safe(LAYOUT_FILE)
-	if data.is_empty():
+
+	if data.get("version") != LAYOUT_VERSION \
+		or data.get("layer") != LAYOUT_LAYER \
+		or not _is_vec2_array(data.get("menu_root")):
+		position = _default_menu_position
+		_save_layout()
 		return
 
-	if _is_vec2_array(data.get("drag_handle")):
-		drag_handle.position = _to_vec2(data["drag_handle"])
-	if _is_vec2_array(data.get("settings_icon")):
-		settings_icon.position = _to_vec2(data["settings_icon"])
-	if _is_vec2_array(data.get("options_root")):
-		options_root.position = _to_vec2(data["options_root"])
+	position = _to_vec2(data["menu_root"])
 
 func _is_vec2_array(v) -> bool:
-	return v is Array and v.size() == 2 and v[0] is float and v[1] is float
+	return v is Array and v.size() == 2 \
+		and (v[0] is float or v[0] is int) and (v[1] is float or v[1] is int) \
+		and is_finite(float(v[0])) and is_finite(float(v[1]))
 
 func _to_vec2(v: Array) -> Vector2:
 	return Vector2(v[0], v[1])
