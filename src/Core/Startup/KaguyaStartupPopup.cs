@@ -132,13 +132,13 @@ public partial class KaguyaStartupPopup : Control, IScreenContext
             $"感谢您使用本皮肤 mod\n目前你使用的模式：[b][color=#FFD700]{mode}[/color][/b]\n"
             + "[b][color= red]请确认当前模式是否适用于你所处的环境。[/color][/b]\n\n"
             + "我们在选角界面为您提供了以下四个选择模式：\n"
-            + "[b][color=#FFD700]Live mode[/color][/b]·[b][color=#FFD700]Live mode cat[/color][/b]·[b][color=#FFD700]Vainilla[/color][/b]·[b][color=#FFD700]Vainilla cat[/color][/b]\n"
+            + "[b][color=#FFD700]Live mode[/color][/b]·[b][color=#FFD700]Live mode cat[/color][/b]·[b][color=#FFD700]Vanilla[/color][/b]·[b][color=#FFD700]Vanilla cat[/color][/b]\n"
             + "\n[color= red]我们并未承诺过制作任何 R-18 模式\nVanilla模式只是不适合所有场景[/color]\n"
             + "\n如果遇到问题\n请在我的[b]GitHub仓库[/b]或[b]创意工坊[/b]提交 issues。\n",
             $"Thank you for using this skin mod!\n\nCurrent mode: [b][color=#FFD700]{mode}[/color][/b]\n"
             + "[color= red]make sure your selected mode is appropriate for your environment.[/color]\n\n"
             + "Four modes are available on the character selection screen:\n"
-            + "[b][color=#FFD700]Live mode[/color][/b]·[b][color=#FFD700]Live mode cat[/color][/b]·[b][color=#FFD700]Vainilla[/color][/b]·[b][color=#FFD700]Vainilla cat[/color][/b]\n"
+            + "[b][color=#FFD700]Live mode[/color][/b]·[b][color=#FFD700]Live mode cat[/color][/b]·[b][color=#FFD700]Vanilla[/color][/b]·[b][color=#FFD700]Vanilla cat[/color][/b]\n"
             + "\n[color= red]We never promised to make any R-18 mode.\nVanilla mode just isn't suitable for every situation.[/color]\n"
             + "\nIf you encounter any issues\nreport them on my GitHub repository or Steam Workshop page.\n");
         if (error != null) body += "\n[color=#ffaaaa]" + error + "[/color]";
